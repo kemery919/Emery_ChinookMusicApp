@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Data;
 using Services;
+// using Internal;
 
 ServiceProvider _serviceProvider;
 MusicQueryService _musicQueryService;
@@ -26,8 +27,9 @@ _musicQueryService = _serviceProvider.GetRequiredService<MusicQueryService>();
 //// Call the service
 // Problem 1 testing
 
-List<string> artistsWithAlbums = await _musicQueryService.GetAllArtistsWithAlbums();
-
-artistsWithAlbums.ForEach(artist => Console.WriteLine(artist));
-
+Console.WriteLine("\n--- GetAllArtistsWithAlbums ---");
+var artistsWithAlbums = await _musicQueryService.GetAllArtistsWithAlbums();
+foreach (var artist in artistsWithAlbums) {
+    Console.WriteLine($"{artist.Name} ({artist.Albums.Count} albums)");
+}
 

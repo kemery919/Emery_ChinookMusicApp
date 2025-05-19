@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Data;
+using Models.Entities;
 
 namespace Services;
 
@@ -11,13 +12,12 @@ public class MusicQueryService{
       _context = context;
   }
 
-  public async Task<List<string>> GetAllArtistsWithAlbums() {
+  public async Task<List<Artist>> GetAllArtistsWithAlbums() {
 
     return await _context.Artist
-      .Include(a => a.Albums)
-      .Select(a => a.Name)
+      .Where(artist => artist.Albums.Count > 0)
+      .Include(artist => artist.Albums)
       .ToListAsync();
-
   }
 
 }
