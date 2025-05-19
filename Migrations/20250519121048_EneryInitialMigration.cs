@@ -12,7 +12,7 @@ namespace Emery_ChinookMusicApp.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Artists",
+                name: "Artist",
                 columns: table => new
                 {
                     ArtistId = table.Column<int>(type: "INTEGER", nullable: false)
@@ -21,11 +21,11 @@ namespace Emery_ChinookMusicApp.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Artists", x => x.ArtistId);
+                    table.PrimaryKey("PK_Artist", x => x.ArtistId);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Employees",
+                name: "Employee",
                 columns: table => new
                 {
                     EmployeeId = table.Column<int>(type: "INTEGER", nullable: false)
@@ -37,53 +37,53 @@ namespace Emery_ChinookMusicApp.Migrations
                     ReportingManagerEmployeeId = table.Column<int>(type: "INTEGER", nullable: true),
                     BirthDate = table.Column<DateTime>(type: "TEXT", nullable: false),
                     HireDate = table.Column<DateTime>(type: "TEXT", nullable: false),
-                    Address = table.Column<string>(type: "TEXT", nullable: false),
-                    City = table.Column<string>(type: "TEXT", nullable: false),
-                    State = table.Column<string>(type: "TEXT", nullable: false),
-                    Country = table.Column<string>(type: "TEXT", nullable: false),
-                    PostalCode = table.Column<string>(type: "TEXT", nullable: false),
-                    Phone = table.Column<string>(type: "TEXT", nullable: false),
-                    Fax = table.Column<string>(type: "TEXT", nullable: false),
-                    Email = table.Column<string>(type: "TEXT", nullable: false)
+                    Address = table.Column<string>(type: "TEXT", nullable: true),
+                    City = table.Column<string>(type: "TEXT", nullable: true),
+                    State = table.Column<string>(type: "TEXT", nullable: true),
+                    Country = table.Column<string>(type: "TEXT", nullable: true),
+                    PostalCode = table.Column<string>(type: "TEXT", nullable: true),
+                    Phone = table.Column<string>(type: "TEXT", nullable: true),
+                    Fax = table.Column<string>(type: "TEXT", nullable: true),
+                    Email = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Employees", x => x.EmployeeId);
+                    table.PrimaryKey("PK_Employee", x => x.EmployeeId);
                     table.ForeignKey(
-                        name: "FK_Employees_Employees_ReportingManagerEmployeeId",
+                        name: "FK_Employee_Employee_ReportingManagerEmployeeId",
                         column: x => x.ReportingManagerEmployeeId,
-                        principalTable: "Employees",
+                        principalTable: "Employee",
                         principalColumn: "EmployeeId");
                 });
 
             migrationBuilder.CreateTable(
-                name: "Genres",
+                name: "Genre",
                 columns: table => new
                 {
                     GenreId = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Name = table.Column<string>(type: "TEXT", nullable: false)
+                    Name = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Genres", x => x.GenreId);
+                    table.PrimaryKey("PK_Genre", x => x.GenreId);
                 });
 
             migrationBuilder.CreateTable(
-                name: "MediaTypes",
+                name: "MediaType",
                 columns: table => new
                 {
                     MediaTypeId = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Name = table.Column<string>(type: "TEXT", nullable: false)
+                    Name = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_MediaTypes", x => x.MediaTypeId);
+                    table.PrimaryKey("PK_MediaType", x => x.MediaTypeId);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Playlists",
+                name: "Playlist",
                 columns: table => new
                 {
                     PlaylistId = table.Column<int>(type: "INTEGER", nullable: false)
@@ -92,32 +92,32 @@ namespace Emery_ChinookMusicApp.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Playlists", x => x.PlaylistId);
+                    table.PrimaryKey("PK_Playlist", x => x.PlaylistId);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Albums",
+                name: "Album",
                 columns: table => new
                 {
                     AlbumId = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Title = table.Column<string>(type: "TEXT", nullable: false),
                     ArtistId = table.Column<int>(type: "INTEGER", nullable: false),
-                    Artist = table.Column<string>(type: "TEXT", nullable: false)
+                    Artist = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Albums", x => x.AlbumId);
+                    table.PrimaryKey("PK_Album", x => x.AlbumId);
                     table.ForeignKey(
-                        name: "FK_Albums_Artists_ArtistId",
+                        name: "FK_Album_Artist_ArtistId",
                         column: x => x.ArtistId,
-                        principalTable: "Artists",
+                        principalTable: "Artist",
                         principalColumn: "ArtistId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Customers",
+                name: "Customer",
                 columns: table => new
                 {
                     CustomerId = table.Column<int>(type: "INTEGER", nullable: false)
@@ -137,22 +137,22 @@ namespace Emery_ChinookMusicApp.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Customers", x => x.CustomerId);
+                    table.PrimaryKey("PK_Customer", x => x.CustomerId);
                     table.ForeignKey(
-                        name: "FK_Customers_Employees_SupportRepId",
+                        name: "FK_Customer_Employee_SupportRepId",
                         column: x => x.SupportRepId,
-                        principalTable: "Employees",
+                        principalTable: "Employee",
                         principalColumn: "EmployeeId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Tracks",
+                name: "Track",
                 columns: table => new
                 {
                     TrackId = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Title = table.Column<string>(type: "TEXT", nullable: false),
+                    Name = table.Column<string>(type: "TEXT", nullable: false),
                     AlbumId = table.Column<int>(type: "INTEGER", nullable: false),
                     MediaTypeId = table.Column<int>(type: "INTEGER", nullable: false),
                     GenreId = table.Column<int>(type: "INTEGER", nullable: false),
@@ -163,29 +163,29 @@ namespace Emery_ChinookMusicApp.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Tracks", x => x.TrackId);
+                    table.PrimaryKey("PK_Track", x => x.TrackId);
                     table.ForeignKey(
-                        name: "FK_Tracks_Albums_AlbumId",
+                        name: "FK_Track_Album_AlbumId",
                         column: x => x.AlbumId,
-                        principalTable: "Albums",
+                        principalTable: "Album",
                         principalColumn: "AlbumId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Tracks_Genres_GenreId",
+                        name: "FK_Track_Genre_GenreId",
                         column: x => x.GenreId,
-                        principalTable: "Genres",
+                        principalTable: "Genre",
                         principalColumn: "GenreId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Tracks_MediaTypes_MediaTypeId",
+                        name: "FK_Track_MediaType_MediaTypeId",
                         column: x => x.MediaTypeId,
-                        principalTable: "MediaTypes",
+                        principalTable: "MediaType",
                         principalColumn: "MediaTypeId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Invoices",
+                name: "Invoice",
                 columns: table => new
                 {
                     InvoiceId = table.Column<int>(type: "INTEGER", nullable: false)
@@ -201,11 +201,11 @@ namespace Emery_ChinookMusicApp.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Invoices", x => x.InvoiceId);
+                    table.PrimaryKey("PK_Invoice", x => x.InvoiceId);
                     table.ForeignKey(
-                        name: "FK_Invoices_Customers_CustomerId",
+                        name: "FK_Invoice_Customer_CustomerId",
                         column: x => x.CustomerId,
-                        principalTable: "Customers",
+                        principalTable: "Customer",
                         principalColumn: "CustomerId",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -221,21 +221,21 @@ namespace Emery_ChinookMusicApp.Migrations
                 {
                     table.PrimaryKey("PK_PlaylistTrack", x => new { x.PlaylistId, x.TrackId });
                     table.ForeignKey(
-                        name: "FK_PlaylistTrack_Playlists_PlaylistId",
+                        name: "FK_PlaylistTrack_Playlist_PlaylistId",
                         column: x => x.PlaylistId,
-                        principalTable: "Playlists",
+                        principalTable: "Playlist",
                         principalColumn: "PlaylistId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_PlaylistTrack_Tracks_TrackId",
+                        name: "FK_PlaylistTrack_Track_TrackId",
                         column: x => x.TrackId,
-                        principalTable: "Tracks",
+                        principalTable: "Track",
                         principalColumn: "TrackId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "InvoiceLines",
+                name: "InvoiceLine",
                 columns: table => new
                 {
                     InvoiceLineId = table.Column<int>(type: "INTEGER", nullable: false)
@@ -247,50 +247,50 @@ namespace Emery_ChinookMusicApp.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_InvoiceLines", x => x.InvoiceLineId);
+                    table.PrimaryKey("PK_InvoiceLine", x => x.InvoiceLineId);
                     table.ForeignKey(
-                        name: "FK_InvoiceLines_Invoices_InvoiceId",
+                        name: "FK_InvoiceLine_Invoice_InvoiceId",
                         column: x => x.InvoiceId,
-                        principalTable: "Invoices",
+                        principalTable: "Invoice",
                         principalColumn: "InvoiceId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_InvoiceLines_Tracks_TrackId",
+                        name: "FK_InvoiceLine_Track_TrackId",
                         column: x => x.TrackId,
-                        principalTable: "Tracks",
+                        principalTable: "Track",
                         principalColumn: "TrackId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Albums_ArtistId",
-                table: "Albums",
+                name: "IX_Album_ArtistId",
+                table: "Album",
                 column: "ArtistId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Customers_SupportRepId",
-                table: "Customers",
+                name: "IX_Customer_SupportRepId",
+                table: "Customer",
                 column: "SupportRepId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Employees_ReportingManagerEmployeeId",
-                table: "Employees",
+                name: "IX_Employee_ReportingManagerEmployeeId",
+                table: "Employee",
                 column: "ReportingManagerEmployeeId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_InvoiceLines_InvoiceId",
-                table: "InvoiceLines",
+                name: "IX_Invoice_CustomerId",
+                table: "Invoice",
+                column: "CustomerId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_InvoiceLine_InvoiceId",
+                table: "InvoiceLine",
                 column: "InvoiceId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_InvoiceLines_TrackId",
-                table: "InvoiceLines",
+                name: "IX_InvoiceLine_TrackId",
+                table: "InvoiceLine",
                 column: "TrackId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Invoices_CustomerId",
-                table: "Invoices",
-                column: "CustomerId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_PlaylistTrack_TrackId",
@@ -298,18 +298,18 @@ namespace Emery_ChinookMusicApp.Migrations
                 column: "TrackId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Tracks_AlbumId",
-                table: "Tracks",
+                name: "IX_Track_AlbumId",
+                table: "Track",
                 column: "AlbumId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Tracks_GenreId",
-                table: "Tracks",
+                name: "IX_Track_GenreId",
+                table: "Track",
                 column: "GenreId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Tracks_MediaTypeId",
-                table: "Tracks",
+                name: "IX_Track_MediaTypeId",
+                table: "Track",
                 column: "MediaTypeId");
         }
 
@@ -317,37 +317,37 @@ namespace Emery_ChinookMusicApp.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "InvoiceLines");
+                name: "InvoiceLine");
 
             migrationBuilder.DropTable(
                 name: "PlaylistTrack");
 
             migrationBuilder.DropTable(
-                name: "Invoices");
+                name: "Invoice");
 
             migrationBuilder.DropTable(
-                name: "Playlists");
+                name: "Playlist");
 
             migrationBuilder.DropTable(
-                name: "Tracks");
+                name: "Track");
 
             migrationBuilder.DropTable(
-                name: "Customers");
+                name: "Customer");
 
             migrationBuilder.DropTable(
-                name: "Albums");
+                name: "Album");
 
             migrationBuilder.DropTable(
-                name: "Genres");
+                name: "Genre");
 
             migrationBuilder.DropTable(
-                name: "MediaTypes");
+                name: "MediaType");
 
             migrationBuilder.DropTable(
-                name: "Employees");
+                name: "Employee");
 
             migrationBuilder.DropTable(
-                name: "Artists");
+                name: "Artist");
         }
     }
 }

@@ -10,6 +10,6 @@ public class Statistic {
 
   public decimal Value { get; set; }
 
-  public string ValueMetric { get; set; } // e.g. "Seconds", "Count"
+  public string? ValueMetric { get; set; } // e.g. "Seconds", "Count"
       
 }

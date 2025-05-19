@@ -136,3 +136,4 @@ C:\Users\Kyle4\Desktop\School\ProgrammingDegree\Sem3\SoftwareDev2\Emery_ChinookM
 C:\Users\Kyle4\Desktop\School\ProgrammingDegree\Sem3\SoftwareDev2\Emery_ChinookMusicApp\obj\Debug\net9.0\Emery_ChinookMusicApp.pdb
 C:\Users\Kyle4\Desktop\School\ProgrammingDegree\Sem3\SoftwareDev2\Emery_ChinookMusicApp\obj\Debug\net9.0\Emery_ChinookMusicApp.genruntimeconfig.cache
 C:\Users\Kyle4\Desktop\School\ProgrammingDegree\Sem3\SoftwareDev2\Emery_ChinookMusicApp\obj\Debug\net9.0\ref\Emery_ChinookMusicApp.dll
+C:\Users\Kyle4\Desktop\School\ProgrammingDegree\Sem3\SoftwareDev2\Emery_ChinookMusicApp\obj\Debug\net9.0\Emery_ChinookMusicApp.sourcelink.json

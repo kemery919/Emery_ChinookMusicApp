@@ -9,10 +9,10 @@ public class Customer {
   public int CustomerId { get; set; }
 
   [Required]
-  public string FirstName { get; set; }
+  public string? FirstName { get; set; }
 
   [Required]
-  public string LastName { get; set; }
+  public string? LastName { get; set; }
 
   public string? Company { get; set; }
 
@@ -35,6 +35,6 @@ public class Customer {
   [ForeignKey("SupportRep")]
   public int SupportRepId { get; set; }
 
-  public virtual Employee SupportRep { get; set; }
+  public virtual Employee? SupportRep { get; set; }
    
 }

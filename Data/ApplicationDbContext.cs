@@ -5,25 +5,25 @@ namespace Data;
 
 public class ApplicationDbContext : DbContext {
 
-  public DbSet<Album> Albums { get; set; }
+  public DbSet<Album> Album { get; set; }
 
-  public DbSet<Artist> Artists { get; set; }
+  public DbSet<Artist> Artist { get; set; }
 
-  public DbSet<Customer> Customers { get; set; }
+  public DbSet<Customer> Customer { get; set; }
 
-  public DbSet<Employee> Employees { get; set; }
+  public DbSet<Employee> Employee { get; set; }
 
-  public DbSet<Genre> Genres { get; set; }
+  public DbSet<Genre> Genre { get; set; }
 
-  public DbSet<Invoice> Invoices { get; set; }
+  public DbSet<Invoice> Invoice { get; set; }
 
-  public DbSet<InvoiceLine> InvoiceLines { get; set; }
+  public DbSet<InvoiceLine> InvoiceLine { get; set; }
 
-  public DbSet<MediaType> MediaTypes { get; set; }
+  public DbSet<MediaType> MediaType { get; set; }
 
-  public DbSet<Playlist> Playlists { get; set; }
+  public DbSet<Playlist> Playlist { get; set; }
 
-  public DbSet<Track> Tracks { get; set; }
+  public DbSet<Track> Track { get; set; }
 
   protected override void OnModelCreating(ModelBuilder modelBuilder) {
   modelBuilder.Entity<Playlist>()

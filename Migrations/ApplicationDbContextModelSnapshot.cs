@@ -24,7 +24,6 @@ namespace Emery_ChinookMusicApp.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Artist")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<int>("ArtistId")
@@ -38,7 +37,7 @@ namespace Emery_ChinookMusicApp.Migrations
 
                     b.HasIndex("ArtistId");
 
-                    b.ToTable("Albums");
+                    b.ToTable("Album");
                 });
 
             modelBuilder.Entity("Models.Entities.Artist", b =>
@@ -53,7 +52,7 @@ namespace Emery_ChinookMusicApp.Migrations
 
                     b.HasKey("ArtistId");
 
-                    b.ToTable("Artists");
+                    b.ToTable("Artist");
                 });
 
             modelBuilder.Entity("Models.Entities.Customer", b =>
@@ -104,7 +103,7 @@ namespace Emery_ChinookMusicApp.Migrations
 
                     b.HasIndex("SupportRepId");
 
-                    b.ToTable("Customers");
+                    b.ToTable("Customer");
                 });
 
             modelBuilder.Entity("Models.Entities.Employee", b =>
@@ -114,26 +113,21 @@ namespace Emery_ChinookMusicApp.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Address")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("BirthDate")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("City")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Country")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Fax")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("FirstName")
@@ -148,11 +142,9 @@ namespace Emery_ChinookMusicApp.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Phone")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("PostalCode")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<int?>("ReportingManagerEmployeeId")
@@ -162,7 +154,6 @@ namespace Emery_ChinookMusicApp.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("State")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Title")
@@ -172,7 +163,7 @@ namespace Emery_ChinookMusicApp.Migrations
 
                     b.HasIndex("ReportingManagerEmployeeId");
 
-                    b.ToTable("Employees");
+                    b.ToTable("Employee");
                 });
 
             modelBuilder.Entity("Models.Entities.Genre", b =>
@@ -182,12 +173,11 @@ namespace Emery_ChinookMusicApp.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("GenreId");
 
-                    b.ToTable("Genres");
+                    b.ToTable("Genre");
                 });
 
             modelBuilder.Entity("Models.Entities.Invoice", b =>
@@ -224,7 +214,7 @@ namespace Emery_ChinookMusicApp.Migrations
 
                     b.HasIndex("CustomerId");
 
-                    b.ToTable("Invoices");
+                    b.ToTable("Invoice");
                 });
 
             modelBuilder.Entity("Models.Entities.InvoiceLine", b =>
@@ -251,7 +241,7 @@ namespace Emery_ChinookMusicApp.Migrations
 
                     b.HasIndex("TrackId");
 
-                    b.ToTable("InvoiceLines");
+                    b.ToTable("InvoiceLine");
                 });
 
             modelBuilder.Entity("Models.Entities.MediaType", b =>
@@ -261,12 +251,11 @@ namespace Emery_ChinookMusicApp.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("MediaTypeId");
 
-                    b.ToTable("MediaTypes");
+                    b.ToTable("MediaType");
                 });
 
             modelBuilder.Entity("Models.Entities.Playlist", b =>
@@ -281,7 +270,7 @@ namespace Emery_ChinookMusicApp.Migrations
 
                     b.HasKey("PlaylistId");
 
-                    b.ToTable("Playlists");
+                    b.ToTable("Playlist");
                 });
 
             modelBuilder.Entity("Models.Entities.Track", b =>
@@ -308,7 +297,7 @@ namespace Emery_ChinookMusicApp.Migrations
                     b.Property<int>("Milliseconds")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Title")
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
@@ -323,7 +312,7 @@ namespace Emery_ChinookMusicApp.Migrations
 
                     b.HasIndex("MediaTypeId");
 
-                    b.ToTable("Tracks");
+                    b.ToTable("Track");
                 });
 
             modelBuilder.Entity("PlaylistTrack", b =>

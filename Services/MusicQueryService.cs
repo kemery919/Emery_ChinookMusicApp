@@ -11,6 +11,13 @@ public class MusicQueryService{
       _context = context;
   }
 
-  
+  public async Task<List<string>> GetAllArtistsWithAlbums() {
+
+    return await _context.Artist
+      .Include(a => a.Albums)
+      .Select(a => a.Name)
+      .ToListAsync();
+
+  }
 
 }
