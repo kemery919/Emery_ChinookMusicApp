@@ -9,7 +9,7 @@ public class Playlist {
   public int PlaylistId { get; set; }
 
   [Required]
-  public string? Name { get; set; } 
+  public required string Name { get; set; } 
 
   public virtual ICollection<Track> Tracks { get; set; } = new List<Track>();
 

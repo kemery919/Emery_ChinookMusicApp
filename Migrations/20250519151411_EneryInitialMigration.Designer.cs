@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Emery_ChinookMusicApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250519121048_EneryInitialMigration")]
+    [Migration("20250519151411_EneryInitialMigration")]
     partial class EneryInitialMigration
     {
         /// <inheritdoc />
@@ -25,9 +25,6 @@ namespace Emery_ChinookMusicApp.Migrations
                     b.Property<int>("AlbumId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
-
-                    b.Property<string>("Artist")
-                        .HasColumnType("TEXT");
 
                     b.Property<int>("ArtistId")
                         .HasColumnType("INTEGER");
@@ -116,21 +113,26 @@ namespace Emery_ChinookMusicApp.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Address")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("BirthDate")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("City")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Country")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Email")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Fax")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("FirstName")
@@ -145,9 +147,11 @@ namespace Emery_ChinookMusicApp.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Phone")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("PostalCode")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<int?>("ReportingManagerEmployeeId")
@@ -157,6 +161,7 @@ namespace Emery_ChinookMusicApp.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("State")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Title")
@@ -176,6 +181,7 @@ namespace Emery_ChinookMusicApp.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("GenreId");
@@ -254,6 +260,7 @@ namespace Emery_ChinookMusicApp.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("MediaTypeId");
@@ -335,11 +342,13 @@ namespace Emery_ChinookMusicApp.Migrations
 
             modelBuilder.Entity("Models.Entities.Album", b =>
                 {
-                    b.HasOne("Models.Entities.Artist", null)
+                    b.HasOne("Models.Entities.Artist", "Artist")
                         .WithMany("Albums")
                         .HasForeignKey("ArtistId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Artist");
                 });
 
             modelBuilder.Entity("Models.Entities.Customer", b =>
