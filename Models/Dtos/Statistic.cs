@@ -6,7 +6,7 @@ namespace Models.Dtos;
 public class Statistic {
   
   [Required]
-  public required string Label { get; set; }
+  public required string? Label { get; set; }
 
   public decimal Value { get; set; }
 
