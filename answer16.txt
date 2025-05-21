@@ -1,0 +1,20 @@
+
+--- GetPlaylistsWithTrackCount ---
+Music: 3290
+Movies: 0
+TV Shows: 213
+Audiobooks: 0
+90â€™s Music: 1477
+Audiobooks: 0
+Movies: 0
+Music: 3290
+Music Videos: 1
+TV Shows: 213
+Brazilian Music: 39
+Classical: 75
+Classical 101 - Deep Cuts: 25
+Classical 101 - Next Steps: 25
+Classical 101 - The Basics: 25
+Grunge: 15
+Heavy Metal Classic: 26
+On-The-Go 1: 1

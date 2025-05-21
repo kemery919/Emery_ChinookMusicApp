@@ -11,7 +11,7 @@ public class Invoice {
   [ForeignKey("Customer")]
   public int CustomerId { get; set; }
 
-  public Customer Customer { get; set; } 
+  public Customer? Customer { get; set; } 
 
   public DateTime InvoiceDate { get; set; }
 

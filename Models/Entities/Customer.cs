@@ -35,6 +35,6 @@ public class Customer {
   [ForeignKey("SupportRep")]
   public int SupportRepId { get; set; }
 
-  public virtual Employee SupportRep { get; set; }
+  public virtual Employee? SupportRep { get; set; }
    
 }

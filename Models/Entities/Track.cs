@@ -14,17 +14,17 @@ public class Track {
   [ForeignKey("Album")]
   public int AlbumId { get; set; }
 
-  public virtual Album Album { get; set; }
+  public virtual Album? Album { get; set; }
 
   [ForeignKey("MediaType")]
   public int MediaTypeId { get; set; }
 
-  public virtual MediaType MediaType { get; set; }
+  public virtual MediaType? MediaType { get; set; }
 
   [ForeignKey("Genre")]
   public int GenreId { get; set; }
 
-  public virtual Genre Genre { get; set; }
+  public virtual Genre? Genre { get; set; }
 
   public string? Composer { get; set; }
 

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\w9018410\\Documents\\Summer 2025\\Software-Dev-2-Projects\\Emery_ChinookMusicApp\\Emery_ChinookMusicApp.csproj": {}
+    "C:\\Users\\Kyle4\\Desktop\\School\\ProgrammingDegree\\Sem3\\SoftwareDev2\\Emery_ChinookMusicApp\\Emery_ChinookMusicApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\w9018410\\Documents\\Summer 2025\\Software-Dev-2-Projects\\Emery_ChinookMusicApp\\Emery_ChinookMusicApp.csproj": {
+    "C:\\Users\\Kyle4\\Desktop\\School\\ProgrammingDegree\\Sem3\\SoftwareDev2\\Emery_ChinookMusicApp\\Emery_ChinookMusicApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\w9018410\\Documents\\Summer 2025\\Software-Dev-2-Projects\\Emery_ChinookMusicApp\\Emery_ChinookMusicApp.csproj",
+        "projectUniqueName": "C:\\Users\\Kyle4\\Desktop\\School\\ProgrammingDegree\\Sem3\\SoftwareDev2\\Emery_ChinookMusicApp\\Emery_ChinookMusicApp.csproj",
         "projectName": "Emery_ChinookMusicApp",
-        "projectPath": "C:\\Users\\w9018410\\Documents\\Summer 2025\\Software-Dev-2-Projects\\Emery_ChinookMusicApp\\Emery_ChinookMusicApp.csproj",
-        "packagesPath": "C:\\Users\\w9018410\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\w9018410\\Documents\\Summer 2025\\Software-Dev-2-Projects\\Emery_ChinookMusicApp\\obj\\",
+        "projectPath": "C:\\Users\\Kyle4\\Desktop\\School\\ProgrammingDegree\\Sem3\\SoftwareDev2\\Emery_ChinookMusicApp\\Emery_ChinookMusicApp.csproj",
+        "packagesPath": "C:\\Users\\Kyle4\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Kyle4\\Desktop\\School\\ProgrammingDegree\\Sem3\\SoftwareDev2\\Emery_ChinookMusicApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\w9018410\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Kyle4\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"

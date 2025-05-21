@@ -1,0 +1,27 @@
+
+--- GetAverageDurationByGenre ---
+Rock: 283910.043176561 Seconds
+Jazz: 291755.376923077 Seconds
+Metal: 309749.443850267 Seconds
+Alternative & Punk: 234353.84939759 Seconds
+Rock And Roll: 134643.5 Seconds
+Blues: 270359.777777778 Seconds
+Latin: 232859.262521589 Seconds
+Reggae: 247177.75862069 Seconds
+Pop: 229034.104166667 Seconds
+Soundtrack: 244370.88372093 Seconds
+Bossa Nova: 219590.0 Seconds
+Easy Listening: 189164.208333333 Seconds
+Heavy Metal: 297452.928571429 Seconds
+R&B/Soul: 220066.852459016 Seconds
+Electronica/Dance: 302985.8 Seconds
+World: 224923.821428571 Seconds
+Hip Hop/Rap: 178176.285714286 Seconds
+Science Fiction: 2625549.07692308 Seconds
+TV Shows: 2145041.02150538 Seconds
+Sci Fi & Fantasy: 2911783.03846154 Seconds
+Drama: 2575283.78125 Seconds
+Comedy: 1585263.70588235 Seconds
+Alternative: 264058.525 Seconds
+Classical: 293867.567567568 Seconds
+Opera: 174813.0 Seconds
