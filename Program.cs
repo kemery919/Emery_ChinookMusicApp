@@ -24,7 +24,7 @@ _serviceProvider = services.BuildServiceProvider();
 
 _musicQueryService = _serviceProvider.GetRequiredService<MusicQueryService>();
 
-// Call the service
+// Call the service.program 
 
 Console.WriteLine("\n--- GetAllArtistsWithAlbums ---");
 var artistsWithAlbums = await _musicQueryService.GetAllArtistsWithAlbums();
