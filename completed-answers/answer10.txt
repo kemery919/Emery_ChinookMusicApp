@@ -1,4 +1,4 @@
-
+[this is pre /1000]
 --- GetAverageDurationByGenre ---
 Rock: 283910.043176561 Seconds
 Jazz: 291755.376923077 Seconds
